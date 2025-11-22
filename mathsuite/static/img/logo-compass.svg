@@ -1,0 +1,38 @@
+<!-- logo-compass.svg - Geometric Compass Logo for MathSuite -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="MathSuite logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="f1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background circular ring -->
+  <g transform="translate(128,128)">
+    <circle r="90" fill="none" stroke="url(#g1)" stroke-width="6" opacity="0.18"/>
+  </g>
+
+  <!-- compass body -->
+  <g transform="translate(128,128)" fill="none" stroke="url(#g1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+    <!-- left leg -->
+    <path d="M -18 -8 L -56 82 L -28 76 Z" fill="url(#g1)" opacity="1" />
+    <!-- right leg -->
+    <path d="M 18 -8 L 56 82 L 28 76 Z" fill="url(#g1)" opacity="1" />
+    <!-- hinge -->
+    <circle cx="0" cy="-12" r="10" fill="white" stroke="url(#g1)" stroke-width="3"/>
+    <!-- central circle -->
+    <circle cx="0" cy="22" r="14" fill="#fff" opacity="0.98" />
+    <circle cx="0" cy="22" r="12" fill="url(#g1)" />
+    <!-- top pointer -->
+    <path d="M -6 -12 L 0 -62 L 6 -12" fill="url(#g1)"/>
+    <!-- inner small ring -->
+    <circle cx="0" cy="0" r="64" stroke="rgba(124,58,237,0.08)" stroke-width="3" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block page_title %}MathSuite{% endblock %}
+{% block page_subtitle %}Smart math tools — Calculator, Converter, Geometry & Visualizer{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+
+  
+  <div class="col-12">
+    <div class="shadow-card p-4 d-flex align-items-center justify-content-between flex-wrap">
+      <div>
+        <h1 class="mb-1">MathSuite</h1>
+        <p class="mb-0 text-muted">Quick access to intelligent math tools — keyboard friendly, fast, and beautiful.</p>
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <a href="/geometry/" class="btn btn-outline-light">Try Geometry</a>
+        <a href="/visualizer/" class="btn btn-primary">Plot a function</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-md-6">
+    <a href="/calculator/" class="card-link" style="text-decoration:none;">
+      <div class="shadow-card p-4 interactive-card" data-tilt>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-calculator" style="font-size:28px; color:var(--accent2); margin-right:12px"></i>
+          <div>
+            <h4 class="mb-1">Calculator</h4>
+            <p class="text-muted mb-0">Safe expression evaluation, history, keyboard-first.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-6">
+    <a href="/converter/" class="card-link" style="text-decoration:none;">
+      <div class="shadow-card p-4 interactive-card" data-tilt>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-arrow-left-right" style="font-size:28px; color:var(--accent1); margin-right:12px"></i>
+          <div>
+            <h4 class="mb-1">Unit Converter</h4>
+            <p class="text-muted mb-0">Length, weight, temperature and more.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-6">
+    <a href="/geometry/" class="card-link" style="text-decoration:none;">
+      <div class="shadow-card p-4 interactive-card" data-tilt>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-image" style="font-size:28px; color:#f59e0b; margin-right:12px"></i>
+          <div>
+            <h4 class="mb-1">Geometry Toolkit</h4>
+            <p class="text-muted mb-0">Draw shapes, compute area/volume and download images.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-6">
+    <a href="/visualizer/" class="card-link" style="text-decoration:none;">
+      <div class="shadow-card p-4 interactive-card" data-tilt>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-graph-up" style="font-size:28px; color:#10b981; margin-right:12px"></i>
+          <div>
+            <h4 class="mb-1">Visualizer</h4>
+            <p class="text-muted mb-0">Plot functions and export graphs.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div>
+{% endblock %}

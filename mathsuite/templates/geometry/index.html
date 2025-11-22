@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Geometry Toolkit</h3>
+
+<form method="get" action="{% url 'geometry_draw' %}" class="row g-3" id="shapeForm">
+
+  <div class="col-auto">
+    <select name="shape" id="shapeSelect" class="form-select">
+      <option value="circle">Circle</option>
+      <option value="rectangle">Rectangle</option>
+      <option value="triangle">Triangle</option>
+    </select>
+  </div>
+
+  <!-- Circle input -->
+  <div class="col-auto" id="circleInputs">
+    <input type="number" step="any" name="r" class="form-control" placeholder="Radius">
+  </div>
+
+  <!-- Rectangle inputs -->
+  <div class="col-auto d-none" id="rectangleInputs">
+    <input type="number" step="any" name="length" class="form-control mb-2" placeholder="Length">
+    <input type="number" step="any" name="breadth" class="form-control" placeholder="Breadth">
+  </div>
+
+  <!-- Triangle inputs -->
+  <div class="col-auto d-none" id="triangleInputs">
+    <input type="number" step="any" name="base" class="form-control mb-2" placeholder="Base">
+    <input type="number" step="any" name="height" class="form-control" placeholder="Height">
+  </div>
+
+  <div class="col-auto">
+    <button class="btn btn-primary">Draw</button>
+  </div>
+
+</form>
+
+<script>
+  const shapeSelect = document.getElementById("shapeSelect");
+  const circleInputs = document.getElementById("circleInputs");
+  const rectangleInputs = document.getElementById("rectangleInputs");
+  const triangleInputs = document.getElementById("triangleInputs");
+
+  shapeSelect.addEventListener("change", function () {
+    const v = this.value;
+
+    circleInputs.classList.add("d-none");
+    rectangleInputs.classList.add("d-none");
+    triangleInputs.classList.add("d-none");
+
+    if (v === "circle") circleInputs.classList.remove("d-none");
+    if (v === "rectangle") rectangleInputs.classList.remove("d-none");
+    if (v === "triangle") triangleInputs.classList.remove("d-none");
+  });
+</script>
+
+{% endblock %}

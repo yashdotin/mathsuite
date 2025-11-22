@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MathSuite</title>
+
+
+  <link rel="icon" type="image/png" href="{% static 'img/logo-compass.png' %}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/svg+xml" href="{% static 'img/logo-compass.svg' %}">
+  <link rel="shortcut icon" href="{% static 'img/logo-compass.png' %}">
+
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  {% include "includes/navbar.html" %}
+
+
+  <main id="page-content" class="page-enter container py-4">
+
+
+    <div class="page-header mb-4">
+      <h2 class="page-title">
+        {% block page_title %}MathSuite{% endblock %}
+      </h2>
+      <p class="page-subtitle">
+        {% block page_subtitle %}Smart math tools for everyone{% endblock %}
+      </p>
+    </div>
+
+
+    <div class="shadow-card p-4">
+      {% block content %}{% endblock %}
+    </div>
+
+  </main>
+
+  {% include "includes/footer.html" %}
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+  <script src="{% static 'js/transition.js' %}"></script>
+  <script src="{% static 'js/tilt.js' %}"></script>
+
+</body>
+
+</html>

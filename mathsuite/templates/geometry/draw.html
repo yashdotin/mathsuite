@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Geometry Result</h3>
+
+{% if info %}
+<div class="alert alert-info mt-3">
+    {{ info }}
+</div>
+{% endif %}
+
+{% if img %}
+<div class="mt-4 text-center">
+    <img src="data:image/png;base64,{{ img }}" class="img-fluid border rounded" alt="Shape Image">
+</div>
+{% else %}
+<div class="alert alert-warning mt-4">
+    No image generated. Please provide valid inputs.
+</div>
+{% endif %}
+
+<div class="mt-4">
+    <a href="{% url 'geometry_index' %}" class="btn btn-secondary">
+        ← Back to Geometry Toolkit
+    </a>
+</div>
+
+{% endblock %}

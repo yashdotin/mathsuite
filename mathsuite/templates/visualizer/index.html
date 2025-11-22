@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Function Plotter</h3>
+<form method="get" action="{% url 'visualizer_plot' %}" class="row g-2">
+  <div class="col-8">
+    <input type="text" name="expr" class="form-control" placeholder="Enter function in x, e.g. x**2 + 2*x + 1">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">Plot</button>
+  </div>
+</form>
+{% endblock %}

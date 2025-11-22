@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Unit Converter - Length</h3>
+
+<form method="post" class="row g-2">
+  {% csrf_token %}
+  <div class="col-3">
+    <input type="number" step="any" name="value" class="form-control" placeholder="Value" value="{{ value }}">
+  </div>
+
+  <div class="col-auto">
+    <select name="from_u" class="form-select">
+      {% for k in unit_map.keys %}
+      <option value="{{ k }}" {% if k == from_u %}selected{% endif %}>{{ k }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-auto">
+    <select name="to_u" class="form-select">
+      {% for k in unit_map.keys %}
+      <option value="{{ k }}" {% if k == to_u %}selected{% endif %}>{{ k }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-auto">
+    <button class="btn btn-primary">Convert</button>
+  </div>
+</form>
+
+{% if out %}
+  <div class="mt-3 alert alert-info">Result: {{ out }}</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Plot for: {{ expr }}</h4>
+{% if error %}
+  <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+{% if img %}
+  <img src="data:image/png;base64,{{ img }}" class="img-fluid border">
+{% endif %}
+{% endblock %}

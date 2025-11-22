@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Calculator</h3>
+<form method="post" class="row gy-2 gx-2 align-items-center">
+  {% csrf_token %}
+  <div class="col-auto" style="flex:1;">
+    <input type="text" name="expr" placeholder="e.g. (2+3)*4" class="form-control" value="{{ expr }}">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">Compute</button>
+  </div>
+</form>
+
+{% if result is not None %}
+  <div class="alert alert-success mt-3">Result: <strong>{{ result }}</strong></div>
+{% endif %}
+{% if error %}
+  <div class="alert alert-danger mt-3">Error: {{ error }}</div>
+{% endif %}
+{% endblock %}
